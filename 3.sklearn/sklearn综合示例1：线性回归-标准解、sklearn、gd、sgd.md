@@ -62,9 +62,13 @@ print(theta_best)
      [2.95453149]]
 
 
+<<<<<<< HEAD
 上述结果和我们期待的[4.5,3]已经非常接近。因为我们引入了一个0到1的随机噪声，均值为0.5，所以截距为4.5。
 
 我们用上述$\theta$做出预测并画图：
+=======
+上述结果和我们期待的[4,3]已经非常接近。我们用上述$\theta$做出预测并画图：
+>>>>>>> 2c46d7ec410821bbb6f6a08a8c99a30522e5d9e2
 
 
 ```python
@@ -142,16 +146,24 @@ theta = np.random.randn(2,1)  # random initialization
 
 for epoch in range(n_epochs):
     for i in range(m):
+<<<<<<< HEAD
         if epoch == 0 and i < 20:                    
             y_predict = X_new_b.dot(theta)           
             style = "b-" if i > 0 else "r--"         
             plt.plot(X_new, y_predict, style)        
+=======
+        if epoch == 0 and i < 20:                    # not shown in the book
+            y_predict = X_new_b.dot(theta)           # not shown
+            style = "b-" if i > 0 else "r--"         # not shown
+            plt.plot(X_new, y_predict, style)        # not shown
+>>>>>>> 2c46d7ec410821bbb6f6a08a8c99a30522e5d9e2
         random_index = np.random.randint(m)
         xi = X_b[random_index:random_index+1]
         yi = y[random_index:random_index+1]
         gradients = 2 * xi.T.dot(xi.dot(theta) - yi)
         eta = learning_schedule(epoch * m + i)
         theta = theta - eta * gradients
+<<<<<<< HEAD
         theta_path_sgd.append(theta)                 
 
 plt.plot(X, y, "b.")                                
@@ -160,6 +172,16 @@ plt.ylabel("$y$", rotation=0, fontsize=18)
 plt.axis([0, 2, 0, 15])                              
 #save_fig("sgd_plot")                                 
 plt.show()                                           
+=======
+        theta_path_sgd.append(theta)                 # not shown
+
+plt.plot(X, y, "b.")                                 # not shown
+plt.xlabel("$x_1$", fontsize=18)                     # not shown
+plt.ylabel("$y$", rotation=0, fontsize=18)           # not shown
+plt.axis([0, 2, 0, 15])                              # not shown
+#save_fig("sgd_plot")                                 # not shown
+plt.show()                                           # not shown
+>>>>>>> 2c46d7ec410821bbb6f6a08a8c99a30522e5d9e2
 ```
 
 

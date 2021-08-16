@@ -13,7 +13,10 @@ import os, urllib, tarfile
 
 ## 1、模型训练
 sklearn使用numpy ndarray或者pandas dataframe作为训练数据，调用fit()函数即可完成训练。
+<<<<<<< HEAD
 本部分我们先介绍一下sklearn的基本用法。
+=======
+>>>>>>> 2c46d7ec410821bbb6f6a08a8c99a30522e5d9e2
 
 ### 1.1 二分类
 

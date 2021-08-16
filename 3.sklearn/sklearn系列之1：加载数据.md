@@ -41,7 +41,64 @@ model.fit(X_train, y_train_5)
 print(model.predict([X[0]]))
 ```
 
+<<<<<<< HEAD
     [ True]
+=======
+
+    ---------------------------------------------------------------------------
+
+    KeyError                                  Traceback (most recent call last)
+
+    ~/opt/anaconda3/envs/tf/lib/python3.8/site-packages/pandas/core/indexes/base.py in get_loc(self, key, method, tolerance)
+       3079             try:
+    -> 3080                 return self._engine.get_loc(casted_key)
+       3081             except KeyError as err:
+
+
+    pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_loc()
+
+
+    pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_loc()
+
+
+    pandas/_libs/hashtable_class_helper.pxi in pandas._libs.hashtable.PyObjectHashTable.get_item()
+
+
+    pandas/_libs/hashtable_class_helper.pxi in pandas._libs.hashtable.PyObjectHashTable.get_item()
+
+
+    KeyError: 0
+
+    
+    The above exception was the direct cause of the following exception:
+
+
+    KeyError                                  Traceback (most recent call last)
+
+    <ipython-input-2-af298a763d15> in <module>
+         11 model = SGDClassifier(loss='hinge')
+         12 model.fit(X_train, y_train_5)
+    ---> 13 print(model.predict([X[0]]))
+    
+
+    ~/opt/anaconda3/envs/tf/lib/python3.8/site-packages/pandas/core/frame.py in __getitem__(self, key)
+       3022             if self.columns.nlevels > 1:
+       3023                 return self._getitem_multilevel(key)
+    -> 3024             indexer = self.columns.get_loc(key)
+       3025             if is_integer(indexer):
+       3026                 indexer = [indexer]
+
+
+    ~/opt/anaconda3/envs/tf/lib/python3.8/site-packages/pandas/core/indexes/base.py in get_loc(self, key, method, tolerance)
+       3080                 return self._engine.get_loc(casted_key)
+       3081             except KeyError as err:
+    -> 3082                 raise KeyError(key) from err
+       3083 
+       3084         if tolerance is not None:
+
+
+    KeyError: 0
+>>>>>>> 2c46d7ec410821bbb6f6a08a8c99a30522e5d9e2
 
 
 ## iris数据集
@@ -62,6 +119,7 @@ print(iris['data'][:10], iris['target'][:], iris['frame'], iris['target_names'][
       iris['DESCR'], iris['feature_names'][:10])
 ```
 
+<<<<<<< HEAD
     dict_keys(['data', 'target', 'frame', 'target_names', 'DESCR', 'feature_names', 'filename'])
     [[5.1 3.5 1.4 0.2]
      [4.9 3.  1.4 0.2]
@@ -140,6 +198,22 @@ print(iris['data'][:10], iris['target'][:], iris['frame'], iris['target_names'][
          conceptual clustering system finds 3 classes in the data.
        - Many, many more ... ['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)']
 
+=======
+
+```python
+
+```
+
+
+```python
+
+```
+
+
+```python
+
+```
+>>>>>>> 2c46d7ec410821bbb6f6a08a8c99a30522e5d9e2
 
 ## 2、内存中的数据
 
@@ -159,9 +233,12 @@ model.fit(X,y)
 print(model.intercept_, model.coef_)
 ```
 
+<<<<<<< HEAD
     [4.45291269] [[2.99295562]]
 
 
+=======
+>>>>>>> 2c46d7ec410821bbb6f6a08a8c99a30522e5d9e2
 我们也可以使用pandas dataframe作为模型的输入。
 
 
@@ -175,9 +252,12 @@ model.fit(X,y)
 print(model.intercept_, model.coef_)
 ```
 
+<<<<<<< HEAD
     [4.45003988] [[3.02825472]]
 
 
+=======
+>>>>>>> 2c46d7ec410821bbb6f6a08a8c99a30522e5d9e2
 下面使用csv文件中的数据时，大部分情况也是转化为pandas.DataFrame。
 
 ## 3、csv文件中的数据
@@ -211,6 +291,7 @@ housing = pd.read_csv(os.path.join(HOUSING_PATH,'housing.csv'))
 housing.head()
 ```
 
+<<<<<<< HEAD
 
 
 
@@ -316,6 +397,8 @@ housing.head()
 
 
 
+=======
+>>>>>>> 2c46d7ec410821bbb6f6a08a8c99a30522e5d9e2
 由于housing中有缺失值，所以我们需要先填充数据。看一下缺失值的情况：
 
 
@@ -323,6 +406,7 @@ housing.head()
 housing.info()
 ```
 
+<<<<<<< HEAD
     <class 'pandas.core.frame.DataFrame'>
     RangeIndex: 20640 entries, 0 to 20639
     Data columns (total 10 columns):
@@ -342,6 +426,8 @@ housing.info()
     memory usage: 1.6+ MB
 
 
+=======
+>>>>>>> 2c46d7ec410821bbb6f6a08a8c99a30522e5d9e2
 我们看到total_bedromms中有缺失值，我们使用均值来做填充。如果有很多字段都有缺失值，可以使用sklearn的Simpleimputer批量处理，详见sklearn系列：数据预处理。
 
 
@@ -366,10 +452,13 @@ model.fit(housing_feature,housing_label)
 print(model.intercept_, model.coef_)
 ```
 
+<<<<<<< HEAD
     -3570118.06149459 [-4.26104026e+04 -4.24754782e+04  1.14445085e+03 -6.62091740e+00
       8.11609666e+01 -3.98732002e+01  7.93047225e+01  3.97522237e+04]
 
 
+=======
+>>>>>>> 2c46d7ec410821bbb6f6a08a8c99a30522e5d9e2
 ### 完整代码
 
 
@@ -388,10 +477,13 @@ model.fit(housing_feature,housing_label)
 print(model.intercept_, model.coef_)
 ```
 
+<<<<<<< HEAD
     -3570118.06149459 [-4.26104026e+04 -4.24754782e+04  1.14445085e+03 -6.62091740e+00
       8.11609666e+01 -3.98732002e+01  7.93047225e+01  3.97522237e+04]
 
 
+=======
+>>>>>>> 2c46d7ec410821bbb6f6a08a8c99a30522e5d9e2
 
 ```python
 
